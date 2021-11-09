@@ -3,8 +3,6 @@
 
 #pragma once
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 7
-
 #define MASTER_LEFT
 
 // default but used in macros
