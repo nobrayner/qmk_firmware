@@ -6,8 +6,10 @@
 
 enum layers {
     BASE = 0,
+    WRKS,
     NAV,
-    SYM,
+    RSYM,
+    LSYM,
     NUM,
     FUN
 };
@@ -24,6 +26,6 @@ enum custom_keycodes {
 
 // Thumb layer-tap shorthands
 #define NAV_SPC LT(NAV, KC_SPC)
-#define SYM_ENT LT(SYM, KC_ENT)
-#define NUM_TAB LT(NUM, KC_TAB)
-#define FUN_DEL LT(FUN, KC_DEL)
+#define WRK_ENT LT(WRKS, KC_ENT)
+#define LSYMMOD LT(LSYM, KC_NO)
+#define RSYMMOD LT(RSYM, KC_ESC)
