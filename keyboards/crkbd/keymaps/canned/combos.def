@@ -3,6 +3,7 @@
 // Left top
 COMB(q_comb,      KC_Q,         KC_C, KC_K)
 COMB(z_comb,      KC_Z,         KC_K, KC_F)
+COMB(rev_rpt,     REV_RPT,      REPEAT, KC_U)
 
 // Left home
 COMB(dquo,        KC_DQUO,      KC_S, KC_H)

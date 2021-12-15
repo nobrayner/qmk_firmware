@@ -58,8 +58,11 @@ bool terminate_num_word(uint16_t keycode, const keyrecord_t *record) {
         case KC_BSPC:
         case KC_X:
         case REPEAT:
-        // case REV_REP:
+        case REV_RPT:
         case KC_NO:
+            if (record->event.pressed && (get_mods() != 0)) {
+                return true;
+            }
             break;
         default:
             if (record->event.pressed) {
@@ -72,7 +75,8 @@ bool terminate_num_word(uint16_t keycode, const keyrecord_t *record) {
 }
 
 bool process_num_word(uint16_t keycode, const keyrecord_t *record) {
-    if (!num_word_on) {
+    if (num_word_on) {
+        // Get the base keycode of a mod or layer tap key
         switch (keycode) {
             case QK_MOD_TAP ... QK_MOD_TAP_MAX:
             case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:

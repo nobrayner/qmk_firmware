@@ -25,3 +25,4 @@ VPATH += keyboards/gboards
 
 SRC += caps_word.c
 SRC += num_word.c
+SRC += repeat.c

@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "keycodes.h"
 #include "caps_word.h"
 #include "num_word.h"
+#include "repeat.h"
 
 #include "g/keymap_combo.h"
 
@@ -148,6 +149,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code(KC_ENT);
             }
             return false;
+        case REPEAT:
+            update_repeat_key(record);
+            return false;
+        case REV_RPT:
+            update_reverse_repeat_key(record);
+            return false;
+        default:
+            if (record->event.pressed) {
+                register_key_to_repeat(keycode);
+            }
+            break;
     }
 
     return true;
@@ -197,8 +209,23 @@ void oled_render_layer_state(void) {
         oled_write_ln_P(PSTR(""), false);
     }
 
+    if (get_oneshot_mods() & MOD_BIT(KC_LCTL)) {
+        oled_write_ln_P(PSTR("CTRL"), false);
+    } else {
+        oled_write_ln_P(PSTR(""), false);
+    }
     if (get_oneshot_mods() & MOD_BIT(KC_LSFT)) {
-        oled_write_ln_P(PSTR("SHIFT"), false);
+        oled_write_ln_P(PSTR("SHFT"), false);
+    } else {
+        oled_write_ln_P(PSTR(""), false);
+    }
+    if (get_oneshot_mods() & MOD_BIT(KC_LGUI)) {
+        oled_write_ln_P(PSTR("GUI"), false);
+    } else {
+        oled_write_ln_P(PSTR(""), false);
+    }
+    if (get_oneshot_mods() & MOD_BIT(KC_LALT)) {
+        oled_write_ln_P(PSTR("ALT"), false);
     } else {
         oled_write_ln_P(PSTR(""), false);
     }

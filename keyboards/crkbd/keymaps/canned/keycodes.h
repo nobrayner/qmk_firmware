@@ -17,7 +17,9 @@ enum layers {
 enum custom_keycodes {
     CPSWORD = SAFE_RANGE,
     NUMWORD,
+
     REPEAT,
+    REV_RPT,
 
     NUM_G,
 
