@@ -1,21 +1,3 @@
-/*
-Copyright 2019 @foostan
-Copyright 2020 Drashna Jaelre <@drashna>
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
 #include "quantum.h"
 #include QMK_KEYBOARD_H
 
@@ -26,53 +8,47 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "g/keymap_combo.h"
 
-
-///////////////////////////////////////////////////////////////////////////
-//////////////////////         TO DO            ///////////////////////////
-///////////////////////////////////////////////////////////////////////////
-//* Implement REPEAT key
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT(
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
-       KC_TAB ,   KC_Y  ,   KC_C  ,   KC_K  ,   KC_F  ,   KC_J  ,                          KC_X  ,   KC_L  ,  REPEAT ,   KC_U  ,  KC_DOT , KC_PSCR ,
+       KC_TAB ,   KC_Q  ,   KC_W  ,   KC_F  ,   KC_P  ,   KC_G  ,                          KC_B  ,   KC_L  ,  REPEAT ,   KC_Y  , KC_QUOT , KC_PSCR ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      CPSWORD ,   KC_R  ,   KC_S  ,   KC_T  ,   KC_H  ,   KC_D  ,                          KC_M  ,   KC_N  ,   KC_A  ,   KC_I  ,   KC_O  , NUMWORD ,
+      CPSWORD ,   KC_A  , MT_LRNG , MT_LMID , MT_LIDX ,   KC_J  ,                          KC_K  , MT_RIDX , MT_RMID , MT_RRNG ,   KC_O  , NUMWORD ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-       KC_NO  , KC_COMM ,   KC_V  ,   KC_G  ,   KC_P  ,   KC_B  ,                        KC_SLSH ,   KC_W  , KC_LPRN , KC_RPRN , KC_UNDS ,  KC_NO  ,
+       KC_NO  ,   KC_Z  ,   KC_X  ,   KC_C  ,   KC_D  ,   KC_V  ,                        CT(DOT) ,   KC_H  ,   KC_M  , CT(LPRN), CT(RPRN),  KC_NO  ,
   //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
                                               RSYMMOD , NAV_SPC , KC_BSPC ,    WRK_ENT ,   KC_E  , LSYMMOD
                                           //`-----------------------------'  `-----------------------------'
   ),
   [NUM] = LAYOUT(
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
-      _______ ,  KC_NO  , KC_PLUS ,   KC_K  , KC_PERC ,   KC_J  ,                        _______ ,  KC_NO  , _______ ,  KC_NO  , _______ , _______ ,
+      _______ ,  KC_NO  , KC_PLUS , KC_ASTR , KC_PERC ,  KC_NO  ,                         KC_NO  ,  KC_NO  , _______ ,  KC_NO  ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ ,   KC_6  ,   KC_4  ,   KC_2  ,   KC_0  , KC_ASTR ,                         KC_NO  ,   KC_1  ,   KC_3  ,   KC_5  ,   KC_7  , _______ ,
+      _______ ,   KC_6  ,   KC_4  ,   KC_2  ,   KC_0  ,   KC_J  ,                          KC_K  ,   KC_1  ,   KC_3  ,   KC_5  ,   KC_7  , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ , _______ ,  KC_NO  ,  NUM_G  ,   KC_8  ,  KC_NO  ,                        _______ ,   KC_9  , _______ , _______ , _______ , _______ ,
+      _______ ,  KC_NO  ,   KC_X  ,  NUM_G  ,   KC_8  ,  KC_NO  ,                        _______ ,   KC_9  ,  KC_NO  , _______ , _______ , _______ ,
   //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
-                                               KC_NO  , _______ , _______ ,    _______ ,  L_BASE ,  KC_NO
+                                               KC_ESC , _______ , _______ ,    _______ ,  L_BASE ,  KC_NO
                                           //`-----------------------------'  `-----------------------------'
   ),
   [RSYM] = LAYOUT(
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
       _______ ,  KC_NO  , C(KC_A) , C(KC_W) ,  KC_NO  ,  KC_NO  ,                         KC_NO  , KC_HASH , _______ ,  KC_AT  , _______ , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ ,  OS_ALT ,  OS_GUI ,  OS_CTL ,  OS_SFT ,  KC_NO  ,                         KC_GRV , KC_QUES , KC_LBRC , KC_RBRC ,  KC_NO  , _______ ,
+      _______ , KC_LGUI , KC_LALT , KC_LCTL , KC_LSFT ,  KC_NO  ,                         KC_GRV , KC_QUES , KC_LBRC , KC_RBRC ,  KC_DLR , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ , C(KC_Z) , C(KC_X) ,  KC_NO  ,  KC_NO  ,  KC_NO  ,                        _______ , KC_AMPR , _______ , _______ , _______ , _______ ,
+      _______ , C(KC_Z) , C(KC_X) ,  KC_NO  ,  KC_NO  ,  KC_NO  ,                        _______ , KC_AMPR ,  KC_NO  , _______ , _______ , _______ ,
   //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
                                                KC_NO  , _______ , _______ ,    _______ , L_BASE ,   L_FUN
                                           //`-----------------------------'  `-----------------------------'
   ),
   [LSYM] = LAYOUT(
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
-      _______ , KC_TILD , KC_PLUS , KC_BSLS , KC_PERC ,  KC_NO  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
+      _______ , KC_TILD , KC_PLUS , KC_ASTR , KC_PERC , KC_SLSH ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ , KC_PIPE , KC_LCBR , KC_RCBR , KC_MINS , KC_ASTR ,                         KC_NO  ,  OS_SFT ,  OS_CTL ,  OS_GUI ,  OS_ALT , _______ ,
+      _______ , KC_PIPE , KC_LCBR , KC_RCBR , KC_MINS , KC_BSLS ,                         KC_NO  , KC_LSFT , KC_LCTL , KC_LALT , KC_LGUI , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ , _______ ,  KC_LT  ,  KC_GT  , KC_EXLM ,  KC_NO  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  , OS_RALT , _______ ,
+      _______ ,  KC_NO  ,  KC_LT  ,  KC_GT  , KC_EXLM ,  KC_NO  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  , KC_RALT , _______ ,
   //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
                                                L_FUN  , _______ , _______ ,    _______ ,  L_BASE ,  KC_NO
                                           //`-----------------------------'  `-----------------------------'
@@ -81,9 +57,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
       _______ ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ ,  WRK_8  ,  WRK_6  ,  WRK_4  ,  WRK_2  ,  KC_NO  ,                         KC_NO  ,  WRK_3  ,  WRK_5  ,  WRK_7  ,  WRK_9  , _______ ,
+      _______ ,  WRK_5  ,  WRK_4  ,  WRK_3  ,  WRK_2  ,  KC_NO  ,                        NDE_LFT , NDE_DWN ,  NDE_UP , NDE_RHT ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  WRK_0  ,  KC_NO  ,                         KC_NO  ,  WRK_1  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
+      _______ ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  WRK_1  ,  KC_NO  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
                                                KC_NO  , _______ , _______ ,    _______ ,  L_BASE ,  KC_NO
                                           //`-----------------------------'  `-----------------------------'
@@ -103,11 +79,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
       _______ ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ ,   KC_F8 ,  KC_F6  ,  KC_F4  ,  KC_F2  ,  KC_F12 ,                         KC_F11 ,  KC_F1  ,  KC_F3  ,  KC_F5  ,  KC_F7  , _______ ,
+      _______ ,  KC_F8  ,  KC_F6  ,  KC_F4  ,  KC_F2  ,  KC_F12 ,                         KC_F11 ,  KC_F1  ,  KC_F3  ,  KC_F5  ,  KC_F7  , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ ,   KC_NO ,  KC_NO  ,  KC_NO  ,  KC_F10 ,  KC_NO  ,                         KC_NO  ,  KC_F9  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
+      _______ ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_F10 ,  KC_NO  ,                         KC_NO  ,  KC_F9  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
-                                               KC_NO  , _______ , _______ ,    _______ ,  L_BASE ,  KC_NO
+                                               KC_ESC , _______ , _______ ,    _______ ,  L_BASE ,  KC_NO
                                           //`-----------------------------'  `-----------------------------'
   ),
 };
@@ -134,8 +110,31 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
-    // "Macro" keys
     switch (keycode) {
+        // Custom tap-holds
+        case CT(DOT):
+            if (record->tap.count && record->event.pressed) {
+                tap_code(KC_DOT);
+            } else if (record->event.pressed) {
+                tap_code(KC_COMM);
+            }
+            return false;
+        case CT(LPRN):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_LPRN);
+            } else if (record->event.pressed) {
+                tap_code(KC_SLSH);
+            }
+            return false;
+        case CT(RPRN):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_RPRN);
+            } else if (record->event.pressed) {
+                tap_code16(KC_QUES);
+            }
+            return false;
+
+        // "Macro" keys
         case NUM_G:
             if (record->event.pressed) {
                 tap_code16(S(KC_G));

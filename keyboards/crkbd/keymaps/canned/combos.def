@@ -1,22 +1,16 @@
 // Combo Name,     Output,       Chord
 
-// Left top
-COMB(q_comb,      KC_Q,         KC_C, KC_K)
-COMB(z_comb,      KC_Z,         KC_K, KC_F)
-COMB(rev_rpt,     REV_RPT,      REPEAT, KC_U)
-
 // Left home
-COMB(dquo,        KC_DQUO,      KC_S, KC_H)
-COMB(scln,        KC_SCLN,      KC_T, KC_H)
+COMB(scln,        KC_SCLN,       MT_LIDX, MT_LMID)
 
 // *** *** *** *** *** *** *** *** *** *** *** *** *** ***
 
 // Right top
 COMB(eql,         KC_EQL,       KC_L, REPEAT)
+COMB(rev_rpt,     REV_RPT,      REPEAT, KC_Y)
 
 // Right home
-COMB(quot,        KC_QUOT,      KC_N, KC_I)
-COMB(coln,        KC_COLN,      KC_N, KC_A)
+COMB(coln,        KC_COLN,      MT_RIDX, MT_RMID)
 
 // Right bottom
-COMB(vim_save,    VIM_SAVE,     KC_W, KC_LPRN)
+COMB(vim_save,    VIM_SAVE,     KC_H, KC_M)

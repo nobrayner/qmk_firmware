@@ -32,31 +32,35 @@ enum custom_keycodes {
 #define U_CUT C(KC_X)
 #define U_UND C(KC_Z)
 
+// Mod taps
+#define MT_LIDX MT(MOD_LSFT, KC_T)
+#define MT_LMID MT(MOD_LCTL, KC_S)
+#define MT_LRNG MT(MOD_LGUI, KC_R)
+#define MT_RIDX MT(MOD_LSFT, KC_N)
+#define MT_RMID MT(MOD_LCTL, KC_U)
+#define MT_RRNG MT(MOD_LGUI, KC_I)
+
 // Thumb layer-tap shorthands
 #define NAV_SPC LT(NAV, KC_SPC)
 #define WRK_ENT LT(WRKS, KC_ENT)
 #define LSYMMOD LT(LSYM, KC_NO)
 #define RSYMMOD LT(RSYM, KC_ESC)
 
-// OS Mods
-#define OS_ALT OSM(MOD_LALT)
-#define OS_RALT OSM(MOD_RALT)
-#define OS_GUI OSM(MOD_LGUI)
-#define OS_CTL OSM(MOD_LCTL)
-#define OS_SFT OSM(MOD_LSFT)
+// Shorthand for defining custom tap-hold keys
+#define CT(KEY) LT(0, KC_##KEY)
 
 // Layer keys
 #define L_BASE TO(BASE)
 #define L_FUN TO(FUN)
 
 // Workspace keys
-#define WRK_1 LGUI(KC_1)
-#define WRK_2 LGUI(KC_2)
-#define WRK_3 LGUI(KC_3)
-#define WRK_4 LGUI(KC_4)
-#define WRK_5 LGUI(KC_5)
-#define WRK_6 LGUI(KC_6)
-#define WRK_7 LGUI(KC_7)
-#define WRK_8 LGUI(KC_8)
-#define WRK_9 LGUI(KC_9)
-#define WRK_0 LGUI(KC_0)
+#define WRK_1 G(KC_1)
+#define WRK_2 G(KC_2)
+#define WRK_3 G(KC_3)
+#define WRK_4 G(KC_4)
+#define WRK_5 G(KC_5)
+
+#define NDE_LFT G(KC_H)
+#define NDE_RHT G(KC_L)
+#define NDE_UP  G(KC_K)
+#define NDE_DWN G(KC_J)
