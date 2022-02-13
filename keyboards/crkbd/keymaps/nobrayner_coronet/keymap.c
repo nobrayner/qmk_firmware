@@ -223,12 +223,14 @@ void oled_render_layer_state(void) {
     }
 }
 
-void oled_task_user(void) {
+bool oled_task_user(void) {
     if (is_keyboard_master()) {
         oled_render_layer_state();
     } else {
         // Render something cool to the left side, I guess?
     }
+
+    return false;
 }
 
 void render_bootmagic_status(bool status) {
