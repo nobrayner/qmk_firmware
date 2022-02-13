@@ -1,0 +1,18 @@
+// Combo Name,     Output,       Chord
+
+// Left home
+COMB(scln,        KC_SCLN,       MT_LIDX, MT_LMID)
+
+// *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+
+// Right top
+COMB(eql,         KC_EQL,       KC_L, REPEAT)
+COMB(rev_rpt,     REV_RPT,      REPEAT, KC_Y)
+
+// Right home
+COMB(coln,        KC_COLN,      MT_RIDX, MT_RMID)
+COMB(unds,        KC_UNDS,      MT_RIDX, MT_RRNG)
+
+// Right bottom
+COMB(vim_save,    VIM_SAVE,     KC_H, KC_M)
+SUBS(parens,      "()",         CT(LPRN), KC_SLSH)
