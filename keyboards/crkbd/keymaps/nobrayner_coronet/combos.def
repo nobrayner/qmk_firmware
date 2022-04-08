@@ -1,7 +1,10 @@
-// Combo Name,     Output,       Chord
+// Combo Name,    Output,       Chord
+
+// Left top
+COMB(mins,        KC_MINS,      KC_F, KC_P)
 
 // Left home
-COMB(scln,        KC_SCLN,       MT_LIDX, MT_LMID)
+COMB(scln,        KC_SCLN,      MT_LIDX, MT_LMID)
 
 // *** *** *** *** *** *** *** *** *** *** *** *** *** ***
 
@@ -14,5 +17,5 @@ COMB(coln,        KC_COLN,      MT_RIDX, MT_RMID)
 COMB(unds,        KC_UNDS,      MT_RIDX, MT_RRNG)
 
 // Right bottom
-COMB(vim_save,    VIM_SAVE,     KC_H, KC_M)
+COMB(vim_save,    VIM_SAVE,     KC_H, CT(DOT))
 SUBS(parens,      "()",         CT(LPRN), KC_SLSH)
