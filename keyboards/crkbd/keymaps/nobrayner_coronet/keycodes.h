@@ -46,10 +46,14 @@ enum custom_keycodes {
 #define LSYMMOD LT(LSYM, KC_NO)
 #define RSYMMOD LT(RSYM, KC_ESC)
 
+//////////////////////////
 // Shorthands
+//////////////////////////
+
 // Custom tap-hold keys
 #define CT(KEY) LT(0, KC_##KEY)
 #define ST(KEY) S(KC_##KEY)
+
 // Layer keys
 #define L_BASE TO(BASE)
 #define L_FUN TO(FUN)
@@ -66,3 +70,6 @@ enum custom_keycodes {
 #define NDE_RHT G(KC_L)
 #define NDE_UP  G(KC_K)
 #define NDE_DWN G(KC_J)
+
+// Utlity Keys
+#define MUTE G(C(A(KC_M)))
