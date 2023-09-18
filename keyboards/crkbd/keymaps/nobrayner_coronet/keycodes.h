@@ -11,7 +11,9 @@ enum layers {
     RSYM,
     LSYM,
     NUM,
-    FUN
+    FUN,
+    GMBS,
+    GMNM,
 };
 
 enum custom_keycodes {
@@ -57,14 +59,20 @@ enum custom_keycodes {
 // Layer keys
 #define L_BASE TO(BASE)
 #define L_FUN TO(FUN)
+#define L_GMBS TO(GMBS)
+#define L_GMNM MO(GMNM)
 
 // Workspace keys
+#define WRK_0 G(KC_0)
 #define WRK_1 G(KC_1)
 #define WRK_2 G(KC_2)
 #define WRK_3 G(KC_3)
 #define WRK_4 G(KC_4)
 #define WRK_5 G(KC_5)
 #define WRK_6 G(KC_6)
+#define WRK_7 G(KC_7)
+#define WRK_8 G(KC_8)
+#define WRK_9 G(KC_9)
 
 #define NDE_LFT G(KC_H)
 #define NDE_RHT G(KC_L)

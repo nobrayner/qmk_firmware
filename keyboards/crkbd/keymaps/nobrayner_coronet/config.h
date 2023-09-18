@@ -17,6 +17,7 @@
 
 // Auto Shift
 #define NO_AUTO_SHIFT_ALPHA
+#define NO_AUTO_SHIFT_TAB
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
 #define AUTO_SHIFT_NO_SETUP
 

@@ -11,7 +11,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT(
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
-       KC_TAB ,   KC_Q  ,   KC_W  ,   KC_F  ,   KC_P  ,   KC_J  ,                          KC_B  ,   KC_L  ,  REPEAT ,   KC_Y  , KC_QUOT , KC_PSCR ,
+       L_GMBS ,   KC_Q  ,   KC_W  ,   KC_F  ,   KC_P  ,   KC_J  ,                          KC_B  ,   KC_L  ,  REPEAT ,   KC_Y  , KC_QUOT , KC_PSCR ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
       CPSWORD ,   KC_A  , MT_LRNG , MT_LMID , MT_LIDX ,   KC_G  ,                          KC_K  , MT_RIDX , MT_RMID , MT_RRNG ,   KC_O  , NUMWORD ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
@@ -55,11 +55,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [WRKS] = LAYOUT(
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
-      _______ ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  WRK_1  ,  KC_NO  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
+      _______ ,  KC_NO  ,  WRK_8  ,  WRK_7  ,  WRK_6  ,  WRK_5  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ ,  WRK_5  ,  WRK_4  ,  WRK_3  ,  WRK_2  ,  KC_NO  ,                        NDE_LFT , NDE_DWN ,  NDE_UP , NDE_RHT ,  KC_NO  , _______ ,
+      _______ ,  WRK_3  ,  WRK_2  ,  WRK_1  ,  WRK_0  ,  WRK_4  ,                        NDE_LFT , NDE_DWN ,  NDE_UP , NDE_RHT ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  WRK_6  ,  KC_NO  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
+      _______ ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  WRK_9  ,  KC_NO  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
                                                KC_NO  ,  KC_NO  , KC_LSFT ,     KC_NO  ,  L_BASE ,  KC_NO
                                           //`-----------------------------'  `-----------------------------'
@@ -68,11 +68,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
       _______ ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,                         U_CUT  ,  U_CPY  ,  U_PST  ,  KC_NO  ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-      _______ ,  KC_NO  ,  KC_NO  , ST(TAB) ,  KC_TAB ,  KC_NO  ,                        KC_LEFT , KC_DOWN ,  KC_UP  , KC_RGHT ,  KC_NO  , _______ ,
+      _______ ,  KC_NO  ,  KC_NO  , ST(TAB) ,  KC_TAB ,  KC_DEL ,                        KC_LEFT , KC_DOWN ,  KC_UP  , KC_RGHT ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
       _______ ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,                        KC_HOME , KC_PGDN , KC_PGUP ,  KC_END ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
-                                               KC_NO  , _______ , _______ ,    KC_LSFT ,  L_BASE ,  KC_NO
+                                               KC_NO  , _______ , _______ ,    KC_LSFT ,  L_BASE , KC_LALT
                                           //`-----------------------------'  `-----------------------------'
   ),
   [FUN] = LAYOUT(
@@ -84,6 +84,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______ ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_F10 ,  KC_NO  ,                         KC_NO  ,  KC_F9  ,  KC_NO  ,  KC_NO  ,  KC_NO  , _______ ,
   //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
                                                KC_ESC , _______ , _______ ,    _______ ,  L_BASE ,  KC_NO
+                                          //`-----------------------------'  `-----------------------------'
+  ),
+  [GMBS] = LAYOUT(
+  //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
+       KC_TAB ,   KC_I  ,   KC_Q  ,   KC_S  ,   KC_E  ,   KC_R  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,
+  //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
+       KC_NO  ,  L_GMNM ,   KC_A  ,   KC_W  ,   KC_D  ,   KC_F  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,
+  //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
+        MUTE  ,   KC_G  ,   KC_Z  ,   KC_X  ,   KC_C  ,   KC_V  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,
+  //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
+                                               KC_ESC ,  KC_SPC ,  KC_ENT ,     KC_NO  ,  L_BASE ,  KC_NO
+                                          //`-----------------------------'  `-----------------------------'
+  ),
+  [GMNM] = LAYOUT(
+  //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
+       KC_NO  ,  KC_NO  ,   KC_6  ,   KC_5  ,   KC_4  ,  KC_NO  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,
+  //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
+       KC_NO  , _______ ,   KC_3  ,   KC_2  ,   KC_1  ,   KC_O  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,
+  //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
+       KC_NO  ,  KC_NO  ,   KC_9  ,   KC_8  ,   KC_7  ,  KC_NO  ,                         KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,  KC_NO  ,
+  //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
+                                              KC_LCTL , KC_LSFT ,  KC_TAB ,     KC_NO  ,  KC_NO  ,  KC_NO
                                           //`-----------------------------'  `-----------------------------'
   ),
 };
@@ -190,6 +212,12 @@ void oled_render_layer_state(void) {
         case FUN:
             oled_write_ln_P(PSTR("FUNC"), false);
             break;
+        case GMBS:
+            oled_write_ln_P(PSTR("GMBS"), false);
+            break;
+        case GMNM:
+            oled_write_ln_P(PSTR("GMNM"), false);
+            break;
     }
 
     oled_write_ln_P(PSTR(""), false);
@@ -197,27 +225,6 @@ void oled_render_layer_state(void) {
 
     if (caps_word_enabled()) {
         oled_write_ln_P(PSTR("CAPS"), false);
-    } else {
-        oled_write_ln_P(PSTR(""), false);
-    }
-
-    if (get_oneshot_mods() & MOD_BIT(KC_LCTL)) {
-        oled_write_ln_P(PSTR("CTRL"), false);
-    } else {
-        oled_write_ln_P(PSTR(""), false);
-    }
-    if (get_oneshot_mods() & MOD_BIT(KC_LSFT)) {
-        oled_write_ln_P(PSTR("SHFT"), false);
-    } else {
-        oled_write_ln_P(PSTR(""), false);
-    }
-    if (get_oneshot_mods() & MOD_BIT(KC_LGUI)) {
-        oled_write_ln_P(PSTR("GUI"), false);
-    } else {
-        oled_write_ln_P(PSTR(""), false);
-    }
-    if (get_oneshot_mods() & MOD_BIT(KC_LALT)) {
-        oled_write_ln_P(PSTR("ALT"), false);
     } else {
         oled_write_ln_P(PSTR(""), false);
     }
